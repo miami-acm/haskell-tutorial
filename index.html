@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
         <link rel="stylesheet" href="reveal.js/css/reveal.css">
-        <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
 
         <!-- Code syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -50,7 +50,7 @@
                 </section>
 
                 <section>
-                    <h2>Functional Programming Concepts</h2>
+                    <h2>Functional programming concepts</h2>
                     <ul>
                         <li class="fragment">First-class functions</li>
                         <li class="fragment">Higher-order functions</li>
@@ -124,7 +124,7 @@
 
                 <section>
                     <section>
-                        <h1>Basic Haskell Syntax</h1>
+                        <h1>Basic Haskell syntax</h1>
                     </section>
                     <section>
                         <h2>Functions</h2>
@@ -248,7 +248,57 @@ False
                     </section>
                     <section>
                         <h2>Functions that eschew side-effects</h2>
+                        <ul>
+                            <li class="fragment">Read/write a file</li>
+                            <li class="fragment">Update a database</li>
+                            <li class="fragment">Print to the user</li>
+                            <li class="fragment">
+                                Read/write on a network connection
+                            </li>
+                        </ul>
                     </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Recursion</h1>
+                    </section>
+                    <section>
+                        <pre><code data-trim>
+max :: (Ord a) => [a] -> a
+max [] = error
+max [x] = x
+max (x:xs)
+    | x > maxTail = x
+    | otherwise = maxTail
+    where maxTail = max xs
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>What does this do?</h2>
+                        <pre><code data-trim>
+something :: (Ord a) => [a] -> [a]
+something [] = []
+somthing (x:xs) =
+    let f = something [a | a <- xs, a <= x]
+        b = something [a | a <- xs, a > x]
+    in f ++ [x] ++ b
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Further information</h1>
+                    <ul>
+                        <li><a href="http://learnyouahaskell.com/">
+                            learnyouahaskell.com
+                        </a></li>
+                        <li><a href="https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems">
+                            wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems
+                        </a></li>
+                        <li><a href="http://stackoverflow.com/questions/1012573/getting-started-with-haskell?rq=1">
+                            stackoverflow.com/questions/1012573/getting-started-with-haskell?rq=1
+                        </a></li>
                 </section>
             </div>
 
