@@ -92,21 +92,21 @@
                     <section>
                         <h2>Functions</h2>
                         <pre><code data-trim>
-                            addOne x = x + 1
+                            something x = x + 1
                         </code></pre>
                     </section>
                     <section>
                         <h2>Type signatures</h2>
                         <pre><code data-trim>
-addOne :: Int -> Int
-addOne x = x + 1
+something :: Int -> Int
+something x = x + 1
                         </code></pre>
                     </section>
                     <section>
                         <h2>Guards</h2>
                         <pre><code data-trim>
-addOneIfPositive :: Int -> Int
-addOneIfPositive x
+something :: Int -> Int
+something x
     | x > 0 = x + 1
     | otherwise = x
                         </code></pre>
@@ -114,15 +114,15 @@ addOneIfPositive x
                     <section>
                         <h2>Pattern matching</h2>
                         <pre><code data-trim>
-addOneIfZero :: Int -> Int
-addOneIfZero 0 = 1
-addOneIfZero x = x
+something :: Int -> Int
+something 0 = 1
+something x = x
                         </code></pre>
 
                         <pre><code data-trim>
-isEmpty :: [Int] -> Bool
-isEmpty [] = True
-isEmpty x = False
+something :: [Int] -> Bool
+something [] = True
+something x = False
                         </code></pre>
                     </section>
                 </section>
